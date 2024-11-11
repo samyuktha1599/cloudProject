@@ -1,0 +1,6 @@
+```json
+{
+  "title": "Golden Retriever Puppy on Campus",
+  "description": "A golden retriever puppy sits on a brick path on a university campus. It is wearing a purple collar and a tag. The puppy is looking at the camera with a happy expression."
+}
+```

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creative Image Uploader</title>
+    <link rel="stylesheet" href="/static/style.css"> <!-- Link to your CSS file -->
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>Creative Image Uploader</h1>
+        <p>Brighten up your day by uploading beautiful images!</p>
+    </header>
+
+    <section class="upload-container">
+        <form action="/upload" method="POST" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="form_file">Select an Image:</label>
+                <input type="file" name="form_file" id="form_file" required accept="image/jpeg"/>
+            </div>
+            <div class="form-group">
+                <button type="submit">Upload Now!</button>
+            </div>
+        </form>
+    </section>
+
+    <section class="gallery-section">
+        <h2>Your Uploaded Images</h2>
+        <ul class="image-list">
+            {% for file in files %}
+                <li><a href="{{ url_for('view_file', filename=file) }}">{{ file }}</a></li>
+            {% endfor %}
+        </ul>
+    </section>
+
+    <section class="logout-section" style="text-align: center; margin-top: 20px;">
+        <form action="/logout" method="POST">
+            <button type="submit" style="padding: 10px 20px; font-size: 16px;">Logout</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>Designed by Sam</p>
+    </footer>
+</body>
+</html>

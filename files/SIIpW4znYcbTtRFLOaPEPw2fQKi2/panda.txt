@@ -1,0 +1,6 @@
+```json
+{
+  "title": "Polar Bear Cub",
+  "description": "A cute polar bear cub standing on a rock, looking towards the camera."
+}
+```

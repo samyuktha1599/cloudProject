@@ -1,0 +1,6 @@
+```json
+{
+ "title": "Tiger Crossing a Stream",
+ "description": "A majestic tiger walks through a shallow stream, its stripes clearly visible against the lush green background."
+}
+```
