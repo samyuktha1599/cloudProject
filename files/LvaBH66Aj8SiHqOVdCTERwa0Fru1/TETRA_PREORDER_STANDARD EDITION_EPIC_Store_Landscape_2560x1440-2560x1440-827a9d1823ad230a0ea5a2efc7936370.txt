@@ -1,6 +1,0 @@
-```json
-{
-  "title": "Far Cry 6",
-  "description": "A poster for the video game Far Cry 6 featuring the characters of Anton Castillo and his son Diego. The game is set in a fictional Caribbean island called Yara and follows the player's fight against the oppressive regime of Anton Castillo."
-}
-```

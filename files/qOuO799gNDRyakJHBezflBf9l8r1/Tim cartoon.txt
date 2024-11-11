@@ -1,6 +1,0 @@
-```json
-{
- "title": "Animated Boy with Baseball Jersey",
- "description": "A cartoon boy with brown hair, big blue eyes, and a light brown baseball jersey with red stripes. He is wearing blue jeans and black sneakers. He is standing with his hands in his pockets and looking at the camera."
-}
-```

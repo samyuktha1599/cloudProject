@@ -1,6 +1,0 @@
-```json
-{
-  "title": "Sleeping Koala",
-  "description": "A cute cartoon koala is sleeping soundly on a tree branch. Zzz's above the koala's head indicate it is dreaming."
-}
-```

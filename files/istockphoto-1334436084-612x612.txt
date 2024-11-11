@@ -1,6 +1,0 @@
-```json
-{
-  "title": "Gaming Setup",
-  "description": "A colorful keyboard and a white gamepad on a black background, a close-up shot of a gamer's setup."
-}
-```
