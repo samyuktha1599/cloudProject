@@ -97,8 +97,9 @@ def index():
        
         image_files = [file for file in all_files if file.lower().endswith(('.png', '.jpg', '.jpeg'))]
         
-        return render_template('index.html', files=image_files) 
-    return render_template('login.html')
+        return render_template('index.html', files=image_files)
+    else:
+        return render_template('login.html')
 
 
 @app.route('/login', methods=["POST"])
