@@ -14,7 +14,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
 # Expose the port that the app runs on
-EXPOSE 8180
+EXPOSE 8080
 
 ENV PYTHONUNBUFFERED=1
 ENV PORT=8080
