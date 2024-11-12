@@ -89,8 +89,8 @@ def sync_local_with_gcs(user_id):
 
 @app.route('/')
 def index():
-    if 'user_id' in session:
-        user_id = session['user_id']
+    user_id = session.get('user_id')
+    if user_id:
         sync_local_with_gcs(user_id)  
         all_files = list_files(user_id)
         
