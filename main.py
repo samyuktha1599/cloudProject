@@ -89,17 +89,17 @@ def sync_local_with_gcs(user_id):
 
 @app.route('/')
 def index():
-    user_id = session.get('user_id')
-    if user_id:
-        sync_local_with_gcs(user_id)  
-        all_files = list_files(user_id)
-        
-       
-        image_files = [file for file in all_files if file.lower().endswith(('.png', '.jpg', '.jpeg'))]
-        
-        return render_template('index.html', files=image_files)
-    else:
+    user_id = session['user_id']
+    if not user_id:
         return render_template('login.html')
+    
+    sync_local_with_gcs(user_id)  
+    all_files = list_files(user_id)
+    
+   
+    image_files = [file for file in all_files if file.lower().endswith(('.png', '.jpg', '.jpeg'))]
+    
+    return render_template('index.html', files=image_files)
 
 
 @app.route('/login', methods=["POST"])
