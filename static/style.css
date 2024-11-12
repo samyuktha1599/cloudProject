@@ -8,7 +8,7 @@
 
 body {
     font-family: 'Roboto', sans-serif;
-    background: linear-gradient(120deg, #ff00fd 0%, #96fd85 100%); 
+    background: linear-gradient(120deg, #0014ff 0%, #fda485 100%); 
     color: #333;
     display: flex;
     flex-direction: column;
