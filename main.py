@@ -89,9 +89,10 @@ def sync_local_with_gcs(user_id):
 
 @app.route('/')
 def index():
+    time.sleep(2)
     user_id = session.get('user_id')
     print('line 93', user_id)
-    time.sleep(2)
+    time.sleep(1)
     if not user_id:
         print('line 96', user_id)
         return render_template('login.html')
