@@ -4,6 +4,7 @@ from flask import Flask, request, redirect, send_file, render_template, session,
 from google.cloud import storage
 import google.generativeai as genai
 import json
+import time
 
 firebase_config = {
     "apiKey": "AIzaSyDe7fjQsfUsaw0gQ6lO3cOif7X8xYS1g28",
@@ -89,6 +90,7 @@ def sync_local_with_gcs(user_id):
 @app.route('/')
 def index():
     user_id = session.get('user_id')
+    time.sleep(2)
     if not user_id:
         return render_template('login.html')
 
