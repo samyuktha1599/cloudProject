@@ -3,8 +3,7 @@ import pyrebase
 from flask import Flask, request, redirect, send_file, render_template, session, flash
 from google.cloud import storage
 import google.generativeai as genai
-import json 
-
+import json
 
 firebase_config = {
     "apiKey": "AIzaSyDe7fjQsfUsaw0gQ6lO3cOif7X8xYS1g28",
@@ -87,21 +86,17 @@ def sync_local_with_gcs(user_id):
             print(f"Deleted local file: {local_file_path}")
 
 
-from time import sleep
-
 @app.route('/')
 def index():
-    user_id = session['user_id']
+    user_id = session.get('user_id')
     if not user_id:
         return render_template('login.html')
-    
-    sync_local_with_gcs(user_id)  
+
+    sync_local_with_gcs(user_id)
     all_files = list_files(user_id)
-    
-   
     image_files = [file for file in all_files if file.lower().endswith(('.png', '.jpg', '.jpeg'))]
     
-    return render_template('index.html', files=image_files)
+    return render_template('index.html', files=image_files) 
 
 
 @app.route('/login', methods=["POST"])
@@ -112,11 +107,6 @@ def login():
     try:
         user = auth.sign_in_with_email_and_password(email, password)
         session['user_id'] = user['localId']  
-        # Ensure session is established
-        for _ in range(5):  # Retry up to 5 times
-            if 'user_id' in session:
-                break
-            sleep(3)  # 100 ms delay to allow session establishment
         return redirect('/')
     except Exception as e:
         flash("Login failed: " + str(e))
