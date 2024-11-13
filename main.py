@@ -31,7 +31,7 @@ os.makedirs('files', exist_ok=True)
 bucket_name = "images2_buc"
 
 app = Flask(__name__)
-app.secret_key = os.urandom(24)  
+app.secret_key = "sams_secret_key"
 
 
 def upload_blob(bucket_name, file, destination_blob_name):
