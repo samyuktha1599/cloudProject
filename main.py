@@ -87,6 +87,8 @@ def sync_local_with_gcs(user_id):
             print(f"Deleted local file: {local_file_path}")
 
 
+from time import sleep
+
 @app.route('/')
 def index():
     user_id = session['user_id']
@@ -110,6 +112,11 @@ def login():
     try:
         user = auth.sign_in_with_email_and_password(email, password)
         session['user_id'] = user['localId']  
+        # Ensure session is established
+        for _ in range(5):  # Retry up to 5 times
+            if 'user_id' in session:
+                break
+            sleep(3)  # 100 ms delay to allow session establishment
         return redirect('/')
     except Exception as e:
         flash("Login failed: " + str(e))
